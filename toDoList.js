@@ -1,4 +1,3 @@
-var myButton = document.getElementById("valeur");
 
 function addToList() {
   var li = document.createElement("li");
