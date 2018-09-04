@@ -32,7 +32,6 @@ function clearList() {
 }
 
 //Fonction qui recherche dans la liste
-
 function search() {
 	
 	// Declare variables
