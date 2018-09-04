@@ -3,9 +3,9 @@ var myNodelist = document.getElementsByTagName("LI");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
   var span = document.createElement("SPAN");
-  //var txt = document.createTextNode("\u00D7");
+  var txt = document.createTextNode("\u00D7");
   span.className = "close";
- // span.appendChild(txt);
+  span.appendChild(txt);
   myNodelist[i].appendChild(span);
 }
 
@@ -38,9 +38,9 @@ function addToList() {
   document.getElementById("textOne").value = '';
   
   var span = document.createElement("SPAN");
-  //var txt = document.createTextNode("\u00D7");
+  var txt = document.createTextNode("\u00D7");
   span.className = "close";
-  //span.appendChild(txt);
+  span.appendChild(txt);
   li.appendChild(span);
 
   for (let i = 0; i < close.length; i++) {
@@ -77,7 +77,7 @@ function search() {
     // Loop through all list items, and hide those who don't match the search query
     for (var i = 0; i < items.length; i++) {
         
-        if (items[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+        if (items[i].innerText.toUpperCase().indexOf(filter) > -1) {
             items[i].style.display = "";
         } else {
             items[i].style.display = "none";
