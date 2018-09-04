@@ -71,7 +71,7 @@ ul li{
 
 .close:hover {background: #bbb;}
 
-textarea#myTextarea{
+textarea{
 	border-style: none;
 	border-color: transparent;
 }
