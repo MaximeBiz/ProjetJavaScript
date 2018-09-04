@@ -1,4 +1,4 @@
-html, body{
+body{
 	margin-top: 20px;
 	margin: 20px;
 	padding: 20px;
@@ -21,7 +21,7 @@ h3{
 }
 
 .buttonAdd {
-    background-color:  #26734d;
+    background-color:  #009999;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -53,11 +53,21 @@ ul {
 }
 
 ul li{
-	background: #e6fff2;
+  cursor: pointer;
+	background: #cccccc;
 	padding: 10px;
 	border: 1px solid #bfbfbf;
 	list-style-type:none;
 	position: relative;
+  transition: 0.2s;
+}
+
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+ul li:hover {
+    background: #009999;
 }
 
 .close {
@@ -65,11 +75,14 @@ ul li{
   position: absolute;
   top: 50%;
   right: 0%;
-  padding: 12px 16px;
+  padding: 12px 16px 12px 16px;
   transform: translate(0%, -50%);
 }
 
-.close:hover {background: #bbb;}
+.close:hover {
+  background-color: #004d4d;
+  color: white;
+}
 
 textarea{
 	border-style: none;
@@ -77,11 +90,15 @@ textarea{
 }
  
 hr{
-	border: 1px solid ##a6a6a6;
+	border: 1px solid #a6a6a6;
 } 
 
 .field_set{
 	border: 1px solid #bfbfbf;
 	border-radius:8px;
 	box-shadow:0 0 10px #999;
+}
+
+span{
+  color: #000000;
 }
