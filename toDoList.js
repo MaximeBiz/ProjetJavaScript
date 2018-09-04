@@ -1,4 +1,4 @@
-// Create a "close" button and append it to each list item
+// Create a "close" button and append it to each list item already present
 var myNodelist = document.getElementsByTagName("LI");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
@@ -10,7 +10,7 @@ for (i = 0; i < myNodelist.length; i++) {
 }
 
 
-//Fonction qui supprime un élément de la liste
+//Fonction qui supprime un élément de la liste déja présent
 var close = document.getElementsByClassName("close");
 var i;
 for (i = 0; i < close.length; i++) {
@@ -52,7 +52,11 @@ function addToList() {
   
 }
 
-
+document.querySelector('#textOne').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      addToList();
+    }
+});
 
 //Fonction qui clear toute la liste
 
