@@ -1,8 +1,31 @@
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  //var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+ // span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+
+//Fonction qui supprime un élément de la liste
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+	var li = this.parentElement;
+    li.remove();
+  }
+}
+
 
 //Fonction qui ajoute le texte saisi à la liste lors du click
 function addToList() {
   var li = document.createElement("LI");
   var inputValue = document.getElementById("textOne").value;
+  var list = document.getElementById("list");
   
   if (inputValue ==='') {
 	  alert("Le champ de saisie est vide");
@@ -10,13 +33,25 @@ function addToList() {
   else {
 	  var t = document.createTextNode(inputValue);
 	  li.appendChild(t);
-	  document.getElementById("list").appendChild(li);
+	  list.appendChild(li);
   }
   document.getElementById("textOne").value = '';
+  
+  var span = document.createElement("SPAN");
+  //var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  //span.appendChild(txt);
+  li.appendChild(span);
+
+  for (let i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var li = this.parentElement;
+	li.remove();
+    }
+  }
+  
 }
 
-
-//Fonction qui supprime un élément de la liste
 
 
 //Fonction qui clear toute la liste
