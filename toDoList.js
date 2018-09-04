@@ -2,7 +2,7 @@
 //Fonction qui ajoute le texte saisi à la liste lors du click
 function addToList() {
   var li = document.createElement("LI");
-  var inputValue = document.getElementById("myTextarea").value;
+  var inputValue = document.getElementById("textOne").value;
   
   if (inputValue ==='') {
 	  alert("Le champ de saisie est vide");
@@ -12,25 +12,43 @@ function addToList() {
 	  li.appendChild(t);
 	  document.getElementById("list").appendChild(li);
   }
-  document.getElementById("myTextarea").value = '';
+  document.getElementById("textOne").value = '';
 }
 
 
 //Fonction qui supprime un élément de la liste
-var myButton = document.getElementById("myButton");
 
-myButton.addEventListener("click", function(event) {
-var fruitsList = document.getElementById("fruits");
-fruitsList.remove(fruitsList.selectedIndex);
-});
 
 //Fonction qui clear toute la liste
 
 function clearList() {
-	var clearAll = document.getElementsByTagName("li");
-	for (let i = 0; i<clearAll.length; i++) {
-		document.getElementById("list").removeChild(li);
+	var list = document.getElementById("list");
+	var items = Array.from(document.getElementsByTagName("li"));
+	//console.log(items)
+	
+	for (var i = 0; i<items.length; i++) {
+		list.removeChild(items[i]);
 	}
 }
 
 //Fonction qui recherche dans la liste
+
+function search() {
+	
+	// Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('textTwo');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("list");
+    li = ul.getElementsByTagName('li');
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}

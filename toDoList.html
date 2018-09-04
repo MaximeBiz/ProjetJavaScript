@@ -10,7 +10,7 @@
 	<form>
 		<fieldset class="field_set">
 			<h2>New Task</h2>
-			<textarea id="myTextarea" placeholder="New Task" rows="2" cols="100" required></textarea><hr><br>
+			<textarea id="textOne" placeholder="New Task" rows="2" cols="100" required></textarea><hr><br>
 			<button type="button" onclick="addToList()" id="add" class="buttonAdd">Add task</button><br><br>
 		</form>
 		
@@ -18,14 +18,23 @@
 
 	<fieldset class="field_set">
 		<h2>Tasks</h2>
-		<textarea id="myTextarea" placeholder="Filter Task" rows="2" cols="100"></textarea><hr><br>
+		<textarea id="textTwo" placeholder="Filter Task" rows="2" cols="100"></textarea><hr><br>
 		<ul id="list">
-			<li>Faire les courses</li>
-			<li>Allez à la salle de sport</li>
+			<li>Faire les courses<span class="close">&times;</span></li>
+			<li>Allez à la salle de sport<span class="close">&times;</span></li>
 		</ul>
 		<button type="button" onclick="clearList()" id="clearList" class="buttonClearList">Clear Tasks</button><br><br>
 	</fieldset>
 
+	<script>
+		var closebtns = document.getElementsByClassName("close");
+		var i;
+		for (i = 0; i < closebtns.length; i++) {
+			closebtns[i].addEventListener("click", function() {
+				this.parentElement.style.display = 'none';
+			});
+		}
+	</script>
 	<script src="toDoList.js"></script>
 </body>
 </html>
