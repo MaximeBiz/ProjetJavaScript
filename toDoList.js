@@ -11,6 +11,7 @@ function addToList() {
 	  li.appendChild(t);
 	  document.getElementById("list").appendChild(li);
   }
+  document.getElementById("myTextarea").value = '';
 }
 
 var myButton = document.getElementById("myButton");
