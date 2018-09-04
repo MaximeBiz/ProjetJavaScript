@@ -55,6 +55,21 @@ ul {
 ul li{
 	background: #e6fff2;
 	padding: 10px;
-	border: 1px solid #000000;
+	border: 1px solid #bfbfbf;
 	list-style-type:none;
+}
+
+textarea#myTextarea{
+	border-style: none;
+	border-color: transparent;
+}
+
+hr{
+	border: 1px solid ##a6a6a6;
+}
+
+.field_set{
+	border: 1px solid #bfbfbf;
+	border-radius:8px;
+	box-shadow:0 0 10px #999;
 }
