@@ -34,20 +34,19 @@ function clearList() {
 //Fonction qui recherche dans la liste
 function search() {
 	
-	// Declare variables
-    var input, filter, ul, li, a, i;
-    input = document.getElementById('textTwo');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("list");
-    li = ul.getElementsByTagName('li');
+    var input = document.getElementById('textTwo');
+    var filter = input.value.toUpperCase();
+    var ul = document.getElementById("list");
+    var items = Array.from(document.getElementsByTagName("li"));
 
     // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
+    for (var i = 0; i < items.length; i++) {
+        
+        if (items[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            items[i].style.display = "";
         } else {
-            li[i].style.display = "none";
+            items[i].style.display = "none";
         }
     }
+	
 }
