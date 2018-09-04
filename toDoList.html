@@ -2,18 +2,29 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Le site officiel de l'équipe de France</title>
+	<title>To Do List Appli</title>
 </head>
+<link rel="stylesheet" type="text/css" href="toDoList.css">
 <body>
 	<h1>Task List</h1>
-	<h2>New Task</h2>
-	Enter your : <textarea id="myTextarea" placeholder="to complete"></textarea><br>
-	<button type="button" onclick="addToList()" id="valeur">Add</button><br><br>
-	<h3>Tasks</h3>
-	<h2>Filter Tasks</h2>
-	<ul id="list">
-		<li></li>
-	</ul>
+	<form>
+		<fieldset>
+			<h2>New Task</h2>
+			<textarea id="myTextarea" placeholder="New Task" rows="2" cols="100" required></textarea><br>
+			<button type="button" onclick="addToList()" id="add" class="buttonAdd">Add task</button><br><br>
+		</form>
+		
+	</fieldset>
+
+	<fieldset>
+		<h2>Tasks</h2>
+		<textarea id="myTextarea" placeholder="Filter Task" rows="2" cols="100"></textarea><br>
+		<ul id="list">
+			<li>Faire les courses</li>
+			<li>Allez à la salle de sport</li>
+		</ul>
+		<button type="button" onclick="clearList()" id="clearList" class="buttonClearList">Clear Tasks</button><br><br>
+	</fieldset>
 
 	<script src="toDoList.js"></script>
 </body>
